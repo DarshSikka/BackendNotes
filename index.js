@@ -12,6 +12,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({
     extended:true
 }));
+app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use("/auth", require("./routes/auth"));
 app.use("/blogs", require("./routes/main"));

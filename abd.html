@@ -1,0 +1,11 @@
+<body><form>
+    <input type="text" name="name" id="name" />
+    <input type="submit">
+</form>
+<script>
+    document.querySelector("form").addEventListener("submit", (e)=>{
+        e.preventDefault();
+        fetch("http://localhost:3002/auth/signup", {method:"POST", body:{name:e.target[0].value}}).then(res=>res.text()).then(result=>console.log(result))
+    })
+</script>
+</body>
