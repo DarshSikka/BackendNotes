@@ -2,10 +2,6 @@ const express=require("express");
 const authperson=express.Router();
 const UserModel=require("../models/UserModel");
 const cors=require("cors");
-authperson.get('/',cors(),(req, res)=>{
-    console.log("I am a fool")
-    res.send("india");
-});
 authperson.post('/signup/', cors(), (req, res)=>{
     console.log(req);
   if(req.body.name && req.body.password && req.body.confirm && req.body.confirm===req.body.password){
